@@ -1,0 +1,19 @@
+{
+  "name": "PaginationReactExample",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Kurounin/PaginationReactExample"
+  },
+  "scripts": {
+    "start": "meteor run"
+  },
+  "dependencies": {
+    "meteor-node-stubs": "~0.2.0",
+    "react": "^15.3.2",
+    "react-addons-pure-render-mixin": "^15.3.2",
+    "react-bootstrap-pagination": "^1.0.2",
+    "react-dom": "^15.3.2",
+    "react-router": "^2.8.1"
+  }
+}
