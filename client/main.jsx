@@ -14,18 +14,24 @@ class HomePageBody extends Component {
   }
 
   render() {
-	return (
-	  <div>
-		  <ul>
-			  {this.props.documents.map(this.renderDocument)}
-		  </ul>
-		  <BootstrapPaginator
-			  pagination={this.props.pag}
-			  limit={10}
-			  containerClass="text-left"
-			  />
-	  </div>
-	);
+    if (!this.props.pag.ready()) {
+        return (
+            <div>Loading...</div>
+        );
+    }
+
+    return (
+      <div>
+          <ul>
+              {this.props.documents.map(this.renderDocument)}
+          </ul>
+          <BootstrapPaginator
+              pagination={this.props.pag}
+              limit={10}
+              containerClass="text-left"
+              />
+      </div>
+    );
   }
 }
 
@@ -43,9 +49,9 @@ class HomePageRoute extends Component {
   }
 
   render() {
-	return (
-	  <HomePage pag={this.pagination} params={{pag: this.pagination}} />
-	);
+    return (
+      <HomePage pag={this.pagination} params={{pag: this.pagination}} />
+    );
   }
 }
 
